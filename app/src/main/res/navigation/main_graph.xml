@@ -26,4 +26,9 @@
             android:name="title"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/images"
+        android:name="com.gmail.jmdm1601.examen.ui.images.ImagesFragment"
+        android:label="@string/images"
+        tools:layout="@layout/fragment_images" />
 </navigation>

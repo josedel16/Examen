@@ -23,13 +23,14 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.movies))
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.movies, R.id.images))
         mBinding.topAppBar.setupWithNavController(navController, appBarConfiguration)
         mBinding.bottomNavigation.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, arguments ->
             when (destination.id) {
                 R.id.movies -> mBinding.bottomNavigation.visibility = View.VISIBLE
+                R.id.images -> mBinding.bottomNavigation.visibility = View.VISIBLE
                 R.id.movieDetailFragment -> {
                     mBinding.bottomNavigation.visibility = View.GONE
                     mBinding.topAppBar.title = arguments?.getString(Constants.TITLE, "")

@@ -6,4 +6,11 @@ object Constants {
     const val API_KEY = "ccf27f61c81408f637b95138c8dfd235"
     const val DATABASE_NAME = "AppDataBase"
     const val TITLE = "title"
+    const val OPTION_CAMERA = 0
+    const val OPTION_GALLERY = 1
+    const val PACKAGE = "package"
+
+    //Firebase
+    const val IMAGES_COLLECTION = "images"
+    const val FIELD_URL = "url"
 }
