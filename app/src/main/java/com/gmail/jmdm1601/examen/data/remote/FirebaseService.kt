@@ -3,6 +3,7 @@ package com.gmail.jmdm1601.examen.data.remote
 import android.net.Uri
 import com.gmail.jmdm1601.examen.core.Constants
 import com.gmail.jmdm1601.examen.core.Resource
+import com.gmail.jmdm1601.examen.data.model.LocationResponse
 import com.google.firebase.firestore.*
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -78,6 +79,43 @@ object FirebaseService {
                     }
                     val images = querySnapshot?.documents?.map { it[Constants.FIELD_URL] as String }
                     offer(images)
+                }
+            awaitClose {
+                listenerRegistration.remove()
+            }
+        }
+    }
+
+    fun addLocation(geo: GeoPoint) {
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection(Constants.LOCATION_COLLECTION)
+            .add(
+                mapOf(
+                    Constants.FIELD_LOCATION to geo,
+                    Constants.FIELD_DATE to FieldValue.serverTimestamp()
+                )
+            )
+    }
+
+    @ExperimentalCoroutinesApi
+    fun getLocations(): Flow<List<LocationResponse>?> {
+        val db = FirebaseFirestore.getInstance()
+        return callbackFlow {
+            val listenerRegistration = db.collection(Constants.LOCATION_COLLECTION)
+                .addSnapshotListener { querySnapshot: QuerySnapshot?, firebaseFirestoreException: FirebaseFirestoreException? ->
+                    if (firebaseFirestoreException != null) {
+                        cancel(
+                            message = "Error fetching locations",
+                            cause = firebaseFirestoreException
+                        )
+                        return@addSnapshotListener
+                    }
+                    val locations: List<LocationResponse>? =
+                        querySnapshot?.documents?.map {
+                            it.toObject(LocationResponse::class.java)!!
+                        }
+                    offer(locations)
                 }
             awaitClose {
                 listenerRegistration.remove()

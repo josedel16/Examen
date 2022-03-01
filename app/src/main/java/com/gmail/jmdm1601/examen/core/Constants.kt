@@ -13,4 +13,9 @@ object Constants {
     //Firebase
     const val IMAGES_COLLECTION = "images"
     const val FIELD_URL = "url"
+    const val LOCATION_COLLECTION = "location"
+    const val FIELD_LOCATION = "location"
+    const val FIELD_DATE = "date"
+
+    const val NOTIFICATION_CHANNEL_ID = "notification_location"
 }

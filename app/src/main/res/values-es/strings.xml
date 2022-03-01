@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Examen</string>
+    <string name="movies">Películas</string>
+    <string name="images">Imágenes</string>
+    <string name="location">Ubicación</string>
+    <string name="release_date">Fecha de lanzamiento</string>
+    <string name="format_release_date">dd/MM/yyyy</string>
+    <string name="add_image">Añadir imagen</string>
+    <string name="option_camera">Cámara</string>
+    <string name="option_gallery">Galería</string>
+    <string name="dialog_permissions_title">Permisos necesarios</string>
+    <string name="dialog_permissions_content">Debes otorgar el permiso a la cámara y a las fotos del dispositivo.</string>
+    <string name="settings">Ajustes</string>
+    <string name="image_added_successfully">Imagen añadida con éxito</string>
+    <string name="error_adding_image">Ocurrió un error al agregar la imagen.</string>
+    <string name="dialog_picker_title">Selecciona una opción</string>
+    <string name="without_images">No se han agregado imágenes</string>
+    <string name="notification_content">Tu ubicación se almacenará en el servidor cada 5 minutos</string>
+    <string name="dialog_permissions_content_location">Debes otorgar el permiso a la ubicación del dispositivo.</string>
+</resources>

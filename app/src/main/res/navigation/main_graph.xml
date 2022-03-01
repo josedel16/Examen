@@ -31,4 +31,9 @@
         android:name="com.gmail.jmdm1601.examen.ui.images.ImagesFragment"
         android:label="@string/images"
         tools:layout="@layout/fragment_images" />
+    <fragment
+        android:id="@+id/location"
+        android:name="com.gmail.jmdm1601.examen.ui.location.LocationFragment"
+        android:label="@string/location"
+        tools:layout="@layout/fragment_location" />
 </navigation>
