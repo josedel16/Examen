@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Examen</string>
+    <string name="movies">Movies</string>
+    <string name="images">Images</string>
+    <string name="location">Location</string>
+    <string name="release_date">Release date</string>
+    <string name="default_format_date">yyyy-MM-dd</string>
+    <string name="format_release_date">yyyy/MM/dd</string>
+</resources>

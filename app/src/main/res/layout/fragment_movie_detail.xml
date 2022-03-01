@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.movies.detail.MovieDetailFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_backdrop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/common_padding_default"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_backdrop" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating_bar"
+                style="?attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_padding_default"
+                android:isIndicator="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/common_padding_default"
+                android:layout_marginTop="@dimen/common_padding_default"
+                android:text="@string/release_date"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintStart_toStartOf="@id/tv_title"
+                app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_release_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_padding_min"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintStart_toEndOf="@id/tv_date"
+                app:layout_constraintTop_toTopOf="@id/tv_date" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_padding_default"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintEnd_toEndOf="@id/tv_title"
+                app:layout_constraintStart_toStartOf="@id/tv_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_release_date" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
