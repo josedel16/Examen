@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gmail.jmdm1601.examen.core.Resource
+import com.gmail.jmdm1601.examen.core.SingleLiveEvent
 import com.gmail.jmdm1601.examen.data.remote.FirebaseService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +21,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ImagesViewModel @Inject constructor() : ViewModel() {
 
-    private val _result = MutableLiveData<Resource<Unit>>()
+    private val _result = SingleLiveEvent<Resource<Unit>>()
     private val _images = MutableLiveData<List<String>?>()
 
     val result: LiveData<Resource<Unit>> = _result
